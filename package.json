@@ -1,23 +1,12 @@
 {
-  "name": "travel-site-udemy",
+  "name": "travel-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jurek2006/travel-site-udemy.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jurek2006/travel-site-udemy/issues"
-  },
-  "homepage": "https://github.com/jurek2006/travel-site-udemy#readme",
   "dependencies": {
-    "jquery": "^3.2.1",
-    "normalize.css": "^7.0.0"
+    "jquery": "^2.2.3",
+    "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.5"
   }
 }
