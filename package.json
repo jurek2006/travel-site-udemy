@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-watch": "^4.3.5"
+    "gulp-watch": "^4.3.11"
   }
 }
