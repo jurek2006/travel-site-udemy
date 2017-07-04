@@ -359,7 +359,7 @@ template {
 /*_global.css*/
 body{
 	font-family: 'Roboto', sans-serif;
-	color: #333;
+	color: red;
 }
 img{
 	max-width: 100%;
