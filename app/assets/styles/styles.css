@@ -5,3 +5,10 @@ body{
 	margin: 5px;
 	columns: 300px 2;
 }
+
+.box{
+	a{
+		display: block;
+		padding: 10px;
+	}
+}
