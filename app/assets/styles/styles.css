@@ -1,4 +1,7 @@
+$mainBlue: #ff00ee;
+
 body{
+	color: $mainBlue;
 	margin: 5px;
 	columns: 300px 2;
 }
