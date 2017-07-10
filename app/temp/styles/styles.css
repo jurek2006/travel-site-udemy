@@ -450,6 +450,10 @@ img{
 .page-section{
 	padding: 4.5rem 0;
 }
+.page-section--blue{
+		background-color: #2f5572;
+		color: #FFF;
+	}
 
 
 
