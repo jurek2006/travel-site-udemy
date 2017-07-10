@@ -1,0 +1,8 @@
+/*_wrapper.css w app/styles/modules*/
+.wrapper{
+	padding-left: 18px;
+	padding-right: 18px;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
