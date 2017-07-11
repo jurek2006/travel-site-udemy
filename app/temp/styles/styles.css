@@ -459,7 +459,7 @@ img{
 
 
 }
-@media (min-width: 800px) {
+@media (min-width: 530px) {
 .page-section{
 		padding: 4.5rem 0
 
@@ -515,6 +515,8 @@ img{
 .headline strong{
 		font-weight: 400;
 	}
+/*@import "modules/_row";*/
+
 
 
 
