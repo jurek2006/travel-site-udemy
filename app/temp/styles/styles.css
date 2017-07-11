@@ -365,6 +365,10 @@ img{
 	max-width: 100%;
 	height: auto;
 }
+*{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
 /*_mixins.css*/
 .btn{
 	background-color: #2f5572;
@@ -446,9 +450,10 @@ img{
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	overflow: hidden;
 }
 .wrapper--medium{
-		max-width: 967px;
+		max-width: 976px;
 	}
 .wrapper .wrapper{
 		padding-left: 0;
@@ -515,18 +520,29 @@ img{
 .headline strong{
 		font-weight: 400;
 	}
+/*_row.css*/
 .row::after{
 		content: "";
 		clear: both;
 		display: table;
 	}
-.row__4{
-		float: left;
-		width: 33.33%; 
+@media (min-width: 800px) {
+
+		.row__medium-4{
+			float: left;
+			width: 33.33%; 
+		}
+
+		.row__medium-8{
+			float: left;
+			width: 66.66%; 
+		}
 	}
-.row__8{
-		float: left;
-		width: 66.66%; 
+.row--gutters {
+		margin-right: -65px;
+	}
+.row--gutters > div{
+		padding-right: 65px;
 	}
 
 
