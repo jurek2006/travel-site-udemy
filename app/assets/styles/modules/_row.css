@@ -22,6 +22,11 @@
 		&__medium-8--smaller{
 			width: 63%;
 		}
+
+		@mixin atMedium{
+			margin-bottom: 0;
+		}
+
 	}
 
 	&--gutters {
@@ -30,5 +35,10 @@
 
 	&--gutters > div{
 		padding-right: 65px;
+	}
+
+	&__b-margin-until-medium{
+		margin-bottom: 1rem;
+
 	}
 }

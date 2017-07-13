@@ -1,3 +1,4 @@
+/* _headline.css */
 .headline{
 	font-weight: 300;
 	font-size: 1.9rem;
@@ -39,6 +40,10 @@
 
 	&--b-margin-large{
 		margin-bottom: 1.6em;
+	}
+
+	&--no-t-margin{
+			margin-top: 0;
 	}
 
 	strong{
