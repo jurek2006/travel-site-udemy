@@ -1,6 +1,7 @@
-// sprites.js
+// sprites.js w gulp/tasks
 var gulp = require('gulp'),
-svgSprite = require('gulp-svg-sprite');
+svgSprite = require('gulp-svg-sprite'),
+rename = require('gulp-rename');
 
 var config = {
 	mode: {
@@ -21,4 +22,10 @@ gulp.task('createSprite', function(){
 
 	//dla wszystkich plików svg w icons i jego wszystkich podfolderach 
 	// - kopiowanie zestawu svg do temp/sprite/css/svg w którym znajduje się plik svg będący kolekcją wszystkich svg
+});
+
+gulp.task('copySpriteCSS', function(){
+	return gulp.src('./app/temp/sprite/css/*.css')
+		.pipe(rename('_sprite.css'))
+		.pipe(gulp.dest('./app/assets/styles/modules'));
 });
