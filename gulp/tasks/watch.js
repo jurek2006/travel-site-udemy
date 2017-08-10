@@ -1,3 +1,4 @@
+// watch.js w /gulp/tasks
 var gulp = require('gulp'),
 watch = require('gulp-watch'),
 browserSync = require('browser-sync').create(); //importujemy tylko metodę create
@@ -18,6 +19,10 @@ gulp.task('watch', function() {
 
   watch('./app/assets/styles/**/*.css', function() {
     gulp.start('cssInject');
+  });
+
+  watch('./app/assets/scripts/**/*.js', function(){
+    gulp.start('scripts');
   });
 
 });
