@@ -1,10 +1,18 @@
 // App.js w app/assets/scripts
 var $ = require('jquery');
-var Person = require('./modules/Person'); 
+// var Person = require('./modules/Person');
+import Person from './modules/Person';
+
+class Adult extends Person{
+	payTaxes(){
+		console.log(this.name + " now owes $0 in taxes.");
+	}
+} 
 
 var john = new Person("John Doe", "blue");
 john.greet();
 
-var jane = new Person("Jane Smith", "green");
+var jane = new Adult("Jane Smith", "orange");
 jane.greet();
+jane.payTaxes();
 
