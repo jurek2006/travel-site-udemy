@@ -1,4 +1,6 @@
 // App.js w /app/assets/scripts
 import MobileMenu from './modules/MobileMenu';
+import RevealOnScroll from './modules/RevealOnScroll';
 
-let mobileMenu = new MobileMenu();
+const mobileMenu = new MobileMenu();
+const revealOnScroll = new RevealOnScroll();
