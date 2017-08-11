@@ -5,6 +5,7 @@ import $ from 'jquery';
 
 class MobileMenu{
 	constructor(){
+		this.siteHeader = $(".site-header");
 		this.menuIcon = $(".site-header__menu-icon"); //wybranie ikony "hamburger menu"
 		this.menuContent = $(".site-header__menu-content"); //wybranie div menu (na mobile ukrytego)
 		this.events();
@@ -16,6 +17,7 @@ class MobileMenu{
 
 	toggleTheMenu(){
 		this.menuContent.toggleClass("site-header__menu-content--is-visible");
+		this.siteHeader.toggleClass("site-header--is-expanded");
 	}
 }
 
