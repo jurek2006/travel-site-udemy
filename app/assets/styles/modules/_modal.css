@@ -1,0 +1,18 @@
+/* _modal.css w app/assets/styles/modules */
+.modal{
+	position: fixed;
+	z-index: 5;
+	background-color: rgba(255,255,255, 0.94);
+	/* sposób na "przesłonięcie zawartości całej strony:; */
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	&__description{
+		text-align: center;
+		font-size: 1.3rem;
+		font-weight: 300;
+		line-height: 1.65;
+	}
+}
