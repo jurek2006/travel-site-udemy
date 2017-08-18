@@ -1,3 +1,4 @@
+/* _page-section.css w app/assets/styles/modules */
 .page-section{
 	padding: 1.2rem 0;
 
@@ -15,8 +16,10 @@
 		background-color: #e0e6ef;
 
 		@mixin atLarge{
-			background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
-			background-size: cover;
+			&.lazyloaded{
+				background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+				background-size: cover;
+			}
 		}
 	}
 
