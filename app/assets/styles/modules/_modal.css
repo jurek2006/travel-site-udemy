@@ -1,0 +1,55 @@
+/* _modal.css w app/assets/styles/modules */
+.modal{
+	position: fixed;
+	z-index: 5;
+	background-color: rgba(255,255,255, 0.94);
+	/* sposób na "przesłonięcie zawartości całej strony:; */
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	/* początkowe ukrycie modal/overlay: */
+	opacity: 0;
+	visibility: hidden;
+
+	/* do efektu zoom-out: */
+	transform: scale(1.2);
+	transition: all .3s ease-out;
+
+	&--is-visible{
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1); /* zoom-out */
+	}
+
+	&__description{
+		text-align: center;
+		font-size: 1.3rem;
+		font-weight: 300;
+		line-height: 1.65;
+	}
+
+	&__close{
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		font-size: 2rem;
+		transform: scaleX(1.2); /* poszerzenie X żeby wyglądał bardziej jak ikonka*/
+		transform-origin: 100% 0;
+		color: $mainBlue;
+		cursor: pointer;
+
+		&:hover{
+			color: $mainOrange;
+		}
+	}
+
+	&__inner{
+		/* wyśrodkowanie zawartości modal/overlay w pionie*/
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
