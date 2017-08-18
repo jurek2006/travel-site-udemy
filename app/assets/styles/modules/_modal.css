@@ -15,7 +15,7 @@
 
 	/* do efektu zoom-out: */
 	transform: scale(1.2);
-	transition: all; .3s ease-out;
+	transition: all .3s ease-out;
 
 	&--is-visible{
 		opacity: 1;

@@ -22,7 +22,7 @@ class Modal{
 	}
 
 	openModal(){
-		// this.modal.addClass("modal--is-visible");
+		this.modal.addClass("modal--is-visible");
 		return false; //zapobiegnięcie domyślnemu przejściu na górę strony (bo href="#")
 	}
 
