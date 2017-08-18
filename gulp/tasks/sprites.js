@@ -2,7 +2,8 @@
 var gulp = require('gulp'),
 svgSprite = require('gulp-svg-sprite'),
 rename = require('gulp-rename'),
-del = require('del');
+del = require('del'),
+svg2png = require('gulp-svg2png');
 
 var config = {
 	mode: {
@@ -30,8 +31,16 @@ gulp.task('createSprite', ['beginClean'], function(){
 	// - kopiowanie zestawu svg do temp/sprite/css/svg w którym znajduje się plik svg będący kolekcją wszystkich svg
 });
 
-gulp.task('copySpriteGraphic', ['createSprite'], function(){
-	return gulp.src('./app/temp/sprite/css/**/*.svg')
+// zadanie do tworzenia automatycznej kopii naszego pliku ikon svg do png:
+gulp.task('createPngCopy', ['createSprite'], function(){
+	return gulp.src('./app/temp/sprite/css/*.svg')
+		.pipe(svg2png())
+		.pipe(gulp.dest('./app/temp/sprite/css'));
+});
+
+// zadanie przenoszące wygenerowane pliki z folderu temp do folderu images
+gulp.task('copySpriteGraphic', ['createPngCopy'], function(){
+	return gulp.src('./app/temp/sprite/css/**/*.{svg,png}')
 		.pipe(gulp.dest('./app/assets/images/sprites'));
 });
 
@@ -45,4 +54,4 @@ gulp.task('endClean', ['copySpriteGraphic', 'copySpriteCSS'], function(){
 	return del('./app/temp/sprite');
 })
 
-gulp.task('icons', ['beginClean','createSprite', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);
+gulp.task('icons', ['beginClean','createSprite', 'createPngCopy', 'copySpriteGraphic', 'copySpriteCSS', 'endClean']);
