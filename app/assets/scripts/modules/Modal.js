@@ -1,3 +1,4 @@
+// modal.js w app/assets/scripts/modules
 import $ from 'jquery'; 
 
 class Modal{
@@ -18,7 +19,15 @@ class Modal{
 		this.closeModalButton.click(this.closeModal.bind(this));
 			// bind j.w.
 
-		// kliknięcie klawisza ESC
+		// kliknięcie dowolnego klawisza 
+		$(document).keyup(this.keyPressHandler.bind(this));
+	}
+
+	keyPressHandler(e){
+		if(e.keyCode == 27){
+		// jeśli przyciśnięto klawisz ESC
+			this.closeModal();
+		}
 	}
 
 	openModal(){
