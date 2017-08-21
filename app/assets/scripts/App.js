@@ -8,5 +8,5 @@ import $ from 'jquery';
 const mobileMenu = new MobileMenu();
 new RevealOnScroll($(".feature-item"), "85%");
 new RevealOnScroll($(".testimonial"), "60%");
-const stickyHeader = new StickyHeader();
+const stickyHeader = new StickyHeader(); 
 const modal = new Modal();
