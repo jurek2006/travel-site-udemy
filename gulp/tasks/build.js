@@ -13,14 +13,14 @@ gulp.task('previewDist', function(){
     // wskazujemy gdzie znajduje się nasza strona
     notify: false,
     server: {
-      baseDir: "dist"
+      baseDir: "docs"
     }
   });
 });
 
 // zadanie usuwające folder dist
-gulp.task('deleteDistFolder', function(){
-	return del("./dist");
+gulp.task('deleteDistFolder', ['icons'], function(){
+	return del("./docs");
 })
 
 // zadanie testowe do kopiowania folderów
@@ -36,11 +36,11 @@ gulp.task('copyGeneralFiles', ['deleteDistFolder', 'styles', 'scripts'],  functi
 	]
 
 	return gulp.src(pathsToCopy)
-		.pipe(gulp.dest("./dist"));
+		.pipe(gulp.dest("./docs"));
 });
 
 // zadanie kopiujące niezbędne obrazy do folderu dist oraz dodatkowo kompresujące obrazy
-gulp.task('optimizeImages', ['deleteDistFolder', 'icons'], function(){
+gulp.task('optimizeImages', ['deleteDistFolder'], function(){
 	// wykrzyknika ! używamy poniżej do wyłączenia określonych plików 
 	return gulp.src(['./app/assets/images/**/*', '!./app/assets/images/icons', '!./app/assets/images/icons/**/*'])
 		.pipe(imagemin({
@@ -48,7 +48,7 @@ gulp.task('optimizeImages', ['deleteDistFolder', 'icons'], function(){
 			interlaced: true,
 			multipass: true
 		}))
-		.pipe(gulp.dest("./dist/assets/images"));
+		.pipe(gulp.dest("./docs/assets/images"));
 });
 
 // zadanie kopiowania, kompresowania i dodawania indywidualnego kodu wersji dla plików js i css
@@ -58,7 +58,7 @@ gulp.task('usemin', ['deleteDistFolder'], function(){
 			css: [function(){return rev()}, function(){return cssnano()}],
 			js: [function(){return rev()}, function(){return uglify()}]
 		}))
-		.pipe(gulp.dest("./dist"));
+		.pipe(gulp.dest("./docs"));
 });
 
 gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'usemin']);
