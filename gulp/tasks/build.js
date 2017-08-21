@@ -51,8 +51,12 @@ gulp.task('optimizeImages', ['deleteDistFolder'], function(){
 		.pipe(gulp.dest("./docs/assets/images"));
 });
 
+gulp.task('useminTrigger', ['deleteDistFolder'], function(){
+	gulp.start("usemin");
+});
+
 // zadanie kopiowania, kompresowania i dodawania indywidualnego kodu wersji dla plików js i css
-gulp.task('usemin', ['deleteDistFolder'], function(){
+gulp.task('usemin', function(){
 	return gulp.src("./app/index.html")
 		.pipe(usemin({
 			css: [function(){return rev()}, function(){return cssnano()}],
@@ -61,4 +65,4 @@ gulp.task('usemin', ['deleteDistFolder'], function(){
 		.pipe(gulp.dest("./docs"));
 });
 
-gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'usemin']);
+gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'useminTrigger']);
