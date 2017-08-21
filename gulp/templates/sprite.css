@@ -1,15 +1,15 @@
-/* sprite.css gulp/templates/*/
+/* _sprite.css gulp/templates/*/
 /*!!! Nie edytuj modules/_sprite.css, bo jest generowane automatycznie przez gulp 
 Zamiast tego edytuj gulp/templates/sprite.css */
 
-{{#shapes}}
+{{#shapes}} 
 	{{#first}}
 		.icon{
 			background-image: url('/assets/images/sprites/{{{sprite}}}');
 		}
 
 		.no-svg .icon{
-			background-image: url('/assets/images/sprites/{{{sprite}}}');
+			background-image: url('/assets/images/sprites/{{#replaceSvgWithPng}}{{{sprite}}}{{/replaceSvgWithPng}}');
 		}
 	{{/first}}
 
